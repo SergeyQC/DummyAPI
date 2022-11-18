@@ -7,9 +7,9 @@
     1. [POST](###POST)
         1. [GET /post (get List)](####GET-post-get-List)
         2. [POST /post/create (Create Post)](####POST-post-create-Create-Post)
-2. [Майнд-карта](##Коллекция POSTMAN)
-3. [Баг-репорты](##Коллекция POSTMAN)
-4. [Коллекция POSTMAN](##Коллекция POSTMAN)
+2. [Майнд-карта](##Майнд-карта)
+3. [Коллекции Postman](##Коллекции Postman)
+4. [Баг-репорты](##Баг-репорты)
 
 ## Описание проекта
 
@@ -96,7 +96,7 @@ lastName: string(length: 2-50)
 picture: string(url)
 }
 ```
-## Майнд карта
+## Майнд-карта
 Данная МК представляет собой наор тестов для тестирования объекта __Post__. Подробная проверка расписана для __Get Post__ и __Create Post__
 ![Alt-текст](https://i.imgur.com/rOKy4iP.png"МК")
 
