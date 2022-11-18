@@ -3,13 +3,13 @@
 Здесь представлено описание тестирования проекта DummyAPI
 
 ## Оглавление
-1. [Описание проекта](#Описание проекта)
-    1. [POST](#POST)
-        1. [GET /post (get List)](#GET-post-get-List)
-        2. [POST /post/create (Create Post)](#POST-post-create-Create-Post)
-2. [Майнд-карта](#Коллекция POSTMAN)
-3. [Баг-репорты](#Коллекция POSTMAN)
-4. [Коллекция POSTMAN](#Коллекция POSTMAN)
+1. [Описание проекта](##Описание проекта)
+    1. [POST](###POST)
+        1. [GET /post (get List)](####GET-post-get-List)
+        2. [POST /post/create (Create Post)](####POST-post-create-Create-Post)
+2. [Майнд-карта](##Коллекция POSTMAN)
+3. [Баг-репорты](##Коллекция POSTMAN)
+4. [Коллекция POSTMAN](##Коллекция POSTMAN)
 
 ## Описание проекта
 
