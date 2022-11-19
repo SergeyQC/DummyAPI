@@ -1,0 +1,1403 @@
+{
+	"info": {
+		"_postman_id": "5b77c0ba-5a69-4f75-8637-9faa7e852427",
+		"name": "Post",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14389797"
+	},
+	"item": [
+		{
+			"name": "GetPostList",
+			"item": [
+				{
+					"name": "GetPostList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post",
+							"host": [
+								"{{host}}post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostList (incorrect host)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}pos",
+							"host": [
+								"{{host}}pos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostList (incorrect method)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{host}}pos",
+							"host": [
+								"{{host}}pos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostList (page=1)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post?page=1",
+							"host": [
+								"{{host}}post"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostList (page=999)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post?page=999",
+							"host": [
+								"{{host}}post"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "999"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostList (incorrect page=1000)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post?page=1000",
+							"host": [
+								"{{host}}post"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostList (incorrect page=asdf)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post?page=asdf",
+							"host": [
+								"{{host}}post"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "asdf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostList (Limit=5)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post?limit=5",
+							"host": [
+								"{{host}}post"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostList (Limit=50)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post?limit=50",
+							"host": [
+								"{{host}}post"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostList (Incorrect limit=4)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post?limit=asdf",
+							"host": [
+								"{{host}}post"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "asdf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostList (Incorrect limit=51)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post?limit=51",
+							"host": [
+								"{{host}}post"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "51"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostList (Incorrect limit=asdf)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post?limit=asdf",
+							"host": [
+								"{{host}}post"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "asdf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostList (Created=0)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post?created=0",
+							"host": [
+								"{{host}}post"
+							],
+							"query": [
+								{
+									"key": "created",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostList (Created=1)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post?created=1",
+							"host": [
+								"{{host}}post"
+							],
+							"query": [
+								{
+									"key": "created",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostList (Created=asdF)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post?created=asdF",
+							"host": [
+								"{{host}}post"
+							],
+							"query": [
+								{
+									"key": "created",
+									"value": "asdF"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreatePost",
+			"item": [
+				{
+					"name": "CreatePost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect method)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect with ID)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": 123,\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"https://thewisdomdaily.com/wp-content/uploads/2013/11/whats_in_a_name.jpg\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect with ID=\" \")",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": \"\",\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"https://thewisdomdaily.com/wp-content/uploads/2013/11/whats_in_a_name.jpg\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect with ID=ячasdf)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": \"ячasdf\",\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"https://thewisdomdaily.com/wp-content/uploads/2013/11/whats_in_a_name.jpg\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect with ID=!@#$%^&*()_+=-)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": \"!@#$%^&*()_+=-\",\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"https://thewisdomdaily.com/wp-content/uploads/2013/11/whats_in_a_name.jpg\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect text=5)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"Whats\",\r\n\"image\": \"https://thewisdomdaily.com/wp-content/uploads/2013/11/whats_in_a_name.jpg\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (text=6)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's\",\r\n\"image\": \"https://thewisdomdaily.com/wp-content/uploads/2013/11/whats_in_a_name.jpg\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (text=1000)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"Слой API любого приложения - один из важнейших программных компонентов системы. Это канал, который соединяет клиента с сервером (или один микросервис с другим), управляет бизнес-процессами и представляет сервисы, которые  приносят пользу пользователям. Общедоступный API, ориентированный на клиента, который делают открытым для конечных пользователей, сам по себе становится продуктом. Если он сломается, это подвергнет риску не только одно приложение, но и целую цепочку бизнес-процессов, построенных вокруг него. Знаменитая пирамида тестов Майка Кона помещает тесты API на сервисный уровень (интеграционный), что предполагает, что около 20% или более всех наших тестов должны быть сосредоточены на уровне API (точный процент зависит от наших потребностей). Пирамида тестов Пирамида тестов Когда у нас уже есть прочный фундамент из модульных тестов, охватывающих отдельные функции, тесты API обеспечивают более высокую надежность. Они проверяют интерфейс, более близкий к пользователю, но не имеют недо\",\r\n\"image\": \"https://thewisdomdaily.com/wp-content/uploads/2013/11/whats_in_a_name.jpg\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect text=1001)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"Слой API любого приложения - один из важнейших программных компонентов системы. Это канал, который соединяет клиента с сервером (или один микросервис с другим), управляет бизнес-процессами и представляет сервисы, которые  приносят пользу пользователям. Общедоступный API, ориентированный на клиента, который делают открытым для конечных пользователей, сам по себе становится продуктом. Если он сломается, это подвергнет риску не только одно приложение, но и целую цепочку бизнес-процессов, построенных вокруг него. Знаменитая пирамида тестов Майка Кона помещает тесты API на сервисный уровень (интеграционный), что предполагает, что около 20% или более всех наших тестов должны быть сосредоточены на уровне API (точный процент зависит от наших потребностей). Пирамида тестов Пирамида тестов Когда у нас уже есть прочный фундамент из модульных тестов, охватывающих отдельные функции, тесты API обеспечивают более высокую надежность. Они проверяют интерфейс, более близкий к пользователю, но не имеют недоo\",\r\n\"image\": \"https://thewisdomdaily.com/wp-content/uploads/2013/11/whats_in_a_name.jpg\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect text=\" \") Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost(incorrect text=object)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": {\r\n    \"text\": \"AUF\"\r\n},\r\n\"image\": \"https://thewisdomdaily.com/wp-content/uploads/2013/11/whats_in_a_name.jpg\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect text=array)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": [\r\n    \"!@#$%\",\r\n    \"asdf\",\r\n    \"12321\"\r\n],\r\n\"image\": \"https://thewisdomdaily.com/wp-content/uploads/2013/11/whats_in_a_name.jpg\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect text=boolean)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": false,\r\n\"image\": \"https://thewisdomdaily.com/wp-content/uploads/2013/11/whats_in_a_name.jpg\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (image - yes)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomCatsImage}}\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (without image)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect image without http://)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"drive.google.com/drive/my-drive\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect image = number)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": 12345,\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect image = array)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": [\"aqwerty\", \"12345\", \"!@##$%^&*\"],\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect image = object)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": {\r\n\"type#1\": \"aqwerty\",\r\n\"type#2\": \"12345\",\r\n\"type#3\": \"!@##$%^&*\"\r\n},\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect image = boolean)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": false,\r\n\"likes\": 1,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost  (likes=100)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 0,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost  (without likes)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost  (likes=0)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 0,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost  (incorrect likes=\" \")",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": \"\",\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost  (incorrect likes=array)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": [\"qwert\", \"12409\", \")(*^%$\", \"1234qwew%^&*\"],\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost  (incorrect likes=object)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": {\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 0,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n},\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost  (incorrect likes=boolean)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": true,\r\n\"tags\": \"#what\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost  (without tags)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 10,\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost  (incorrect tags=\" \")",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 10,\r\n\"tags\": \"\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost  (incorrect tags=object)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 10,\r\n\"tags\": {\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 10,\r\n\"tags\": \"\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n},\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost  (incorrect tags=boolean)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 10,\r\n\"tags\": false,\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (with links)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 10,\r\n\"tags\": \"#what\",\r\n\"links\": \"https://ya.ru/\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect without owner)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"https://thewisdomdaily.com/wp-content/uploads/2013/11/whats_in_a_name.jpg\",\r\n\"likes\": 1,\r\n\"tags\": \"#what\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect owner=12345)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": 123,\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 777,\r\n\"tags\": \"#what\",\r\n\"owner\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect owner=\" \")",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": 123,\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 777,\r\n\"tags\": \"#what\",\r\n\"owner\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect owner=QWerty)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": 123,\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 777,\r\n\"tags\": \"#what\",\r\n\"owner\": \"QwerЕнгш\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect owner=!@#$%^&*)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": 123,\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 777,\r\n\"tags\": \"#wh!@#$%^&*at\",\r\n\"owner\": \"QwerЕнгш\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect owner=array)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": 123,\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 777,\r\n\"tags\": \"#wh!@#$%^&*at\",\r\n\"owner\": [\"60d0fe4f5311236168a109ca\", \"60d0fe4f5311236168a109ca\", \"60d0fe4f5311236168a109ca\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect owner=object)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": 123,\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 777,\r\n\"tags\": \"#wh!@#$%^&*at\",\r\n\"owner\": {\r\n\"id\": 123,\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 777,\r\n\"tags\": \"#wh!@#$%^&*at\",\r\n\"owner\": \"60d0fe4f5311236168a109ca\"\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost (incorrect owner=boolean)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": 123,\r\n\"text\": \"What's your name man?\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": 777,\r\n\"tags\": \"#wh!@#$%^&*at\",\r\n\"owner\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{app-id}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "app-id",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
