@@ -116,40 +116,71 @@ picture: string(url)
 
 ## Авто-тесты
 Для автоматизации тестирования всех методов (GET, POST, PATCH, DELETE) в едином цикле работы с постами, были созданы автотесты.
-На данном этапе, для автотесстов использовались снипеты, позволяющие работыть без глубокого знания кода java-script. Данный автотест представляет собой набор тестов для тестирования данный пользователя (User) и поста (Post).
+На данном этапе, для автотестов использовались сниппеты, позволяющие работать без глубокого знания кода java-script. Данный автотест представляет собой набор тестов для тестирования данных пользователя (User) и опубликованного поста (Post).
 
-### Общие снипеты
+### Общие сниппеты
 
-Для начал были заложены общие снипеты, которые применялись для каждого метода. Были оценены три параметра:
+Для начал были заложены общие сниппеты, которые применялись для каждого метода. Были оценены три параметра:
 - Статуст код
-
-__Status code is 200__
 ```Javascript
 pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 })
 ```
 - Текст статуса кода
-
-__Status is OK__
 ```Javascript
 pm.test("Status is OK", function () {
     pm.response.to.have.status("OK");
 });
 ```
 - Время отклика
-
-__Response time is less than 700ms__
 ```Javascript
 pm.test("Response time is less than 700ms", function () {
     pm.expect(pm.response.responseTime).to.be.below(700);
 });
 ```
-Т.к. автотест идет последовательно, от получения списка всех постов и создания нового поста, до его редактирования и удаления, неоходимо чтобы на этапе POST тест подтягивал id нового поста из тела ответа и сохранял. Для этого добавлен снипет, который сразу заносит в переменные коллекции полученный id, а необходимые нам методы, будут его использовать в качестве параметра запроса.
+Т.к. автотест идет последовательно, от получения списка всех постов и создания нового, до его редактирования и удаления, неоходимо чтобы на этапе POST тест подтягивал id нового поста из тела ответа и сохранял. Для этого в тест метода POST добавлен сниппет, который сразу заносит в переменную коллекции полученный id, а необходимые нам методы, будут его использовать в качестве параметра запроса.
 
 ```Javascript
 pm.collectionVariables.set("postId", jsonData.id);
 ```
+### Индвинидуальные сниппеты
+
+Для каждого метода были добавлены сниппеты, которые сравнивали значение ключей в отправеном request body с полученным от сервера response body. Далее пара примеров:
+
+__GetUserList__
+- Полученный спсиок юзеров является массивом
+```Javascript
+pm.test("Check body data[0] id is array", function () {
+    pm.expect(jsonData.data).to.be.an('array');
+});
+```
+- Полученный спсиок юзеров содержит не более 20 объектов
+```Javascript
+pm.test("Check limit is 20", function () {
+    pm.expect(jsonData.limit).to.eql(20);
+});
+```
+- Полученный спсиок взят со стартовой страницы 0
+```Javascript
+pm.test("Check page is 0", function () {
+    pm.expect(jsonData.page).to.eql(0);
+});
+```
+__CreatePost__
+- Значение ключа _"id"_ является строкой
+```Javascript
+pm.test("Check body id is string", function () {
+    pm.expect(jsonData.id).to.be.a('string');
+});
+```
+- Заданное значение ключа _"likes"_ в request body совпадает с полученным в response body
+```Javascript
+pm.test("Check body likes", function () {
+    pm.expect(jsonData.likes).to.eql(9999);
+});
+```
+
 Более подробно, можно ознакомиться с ними:
-- [Автотест для User.]()
-- [Автотест для Post.]()
+- [Автотест для User.](https://github.com/SergeyQC/DummyAPI/blob/main/AutoTestApi%20for%20User.postman_collection.json)
+- [Автотест для Post.](https://github.com/SergeyQC/DummyAPI/blob/main/AutoTestApi%20for%20Post.postman_collection.json)
