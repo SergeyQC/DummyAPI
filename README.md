@@ -113,6 +113,6 @@ picture: string(url)
 В процессе тестировнаия были найдены не соотвествия с ожидаемым результатом и заведены баг-репорты
 
 В качестве примера, прикрепил скрин одного из них:
-![Alt-текст](https://"МК")
+![Alt-текст](https://i.imgur.com/KrR4you.png"МК")
 
 Более подробно с ними можно ознакомиться по [ссылке](https://docs.google.com/spreadsheets/d/1XoW6kW8iGQ1St1mtUD3-C-Yx2XklgPDXD6QuUGC3bW4/edit?usp=sharing)
