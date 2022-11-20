@@ -1,0 +1,496 @@
+{
+	"info": {
+		"_postman_id": "44e73ea2-274d-4c2b-b7eb-c8866ee7873f",
+		"name": "AutoTestApi for User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14389797"
+	},
+	"item": [
+		{
+			"name": "GetUserList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Check body data[0] id is array\", function () {\r",
+							"    pm.expect(jsonData.data).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0] id is string\", function () {\r",
+							"    pm.expect(jsonData.data[0].id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body email is undefined\", function () {\r",
+							"    pm.expect(jsonData.data[0].email).to.be.a('undefined');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[19] id is string\", function () {\r",
+							"    pm.expect(jsonData.data[19].id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[20] id is undefined\", function () {\r",
+							"    pm.expect(jsonData.data[20]).to.be.a('undefined');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check limit is 20\", function () {\r",
+							"    pm.expect(jsonData.limit).to.eql(20);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check page is 0\", function () {\r",
+							"    pm.expect(jsonData.page).to.eql(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body total is number\", function () {\r",
+							"    pm.expect(jsonData.total).to.be.a('number');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}post",
+					"host": [
+						"{{host}}post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});\r",
+							"\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"userId\", jsonData.id);\r",
+							"\r",
+							"pm.test(\"Check body id is string\", function () {\r",
+							"    pm.expect(jsonData.id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body title\", function () {\r",
+							"    pm.expect(jsonData.title).to.eql(\"mr\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body firstName\", function () {\r",
+							"    pm.expect(jsonData.firstName).to.eql(\"fff\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body LasttName\", function () {\r",
+							"    pm.expect(jsonData.firstName).to.eql(\"fff\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body picture\", function () {\r",
+							"    pm.expect(jsonData.picture).to.eql(\"https://cdn.fakercloud.com/avatars/robinclediere_128.jpg\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body gender\", function () {\r",
+							"    pm.expect(jsonData.gender).to.eql(\"other\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body email is string\", function () {\r",
+							"    pm.expect('jsonData.email').to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body dateOfBirth\", function () {\r",
+							"    pm.expect(jsonData.dateOfBirth).to.eql(\"1900-01-01T00:00:00.000Z\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body phone\", function () {\r",
+							"    pm.expect(jsonData.phone).to.eql(\"364-678-5233\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body street\", function () {\r",
+							"    pm.expect(jsonData.location.street).to.eql(\"Carlee Forks\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body city\", function () {\r",
+							"    pm.expect(jsonData.location.city).to.eql(\"Arturoberg\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body state\", function () {\r",
+							"    pm.expect(jsonData.location.state).to.eql(null);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body country\", function () {\r",
+							"    pm.expect(jsonData.location.country).to.eql(\"Hong Kong\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body timezone\", function () {\r",
+							"    pm.expect(jsonData.location.timezone).to.eql(\"+3:00\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body registerDate is string\", function () {\r",
+							"    pm.expect('jsonData.registerDate').to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body updatedDate is string\", function () {\r",
+							"    pm.expect('jsonData.updatedDate').to.be.a('string');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\": \"mr\",\r\n\"firstName\": \"fff\",\r\n\"lastName\": \"fff\",\r\n\"gender\": \"other\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"dateOfBirth\": \"1/1/1900\",\r\n\"registerDate\": \"09/11/2022\",\r\n\"phone\": \"364-678-5233\",\r\n\"picture\": \"https://cdn.fakercloud.com/avatars/robinclediere_128.jpg\",\r\n\"location\": {\r\n    \"street\": \"Carlee Forks\",\r\n    \"city\": \"Arturoberg\",\r\n    \"state\": null,\r\n    \"country\": \"Hong Kong\",\r\n    \"timezone\": \"+3:00\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}user/create",
+					"host": [
+						"{{host}}user"
+					],
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserByID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});\r",
+							"\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"userId\", jsonData.id);\r",
+							"\r",
+							"pm.test(\"Check body id is string\", function () {\r",
+							"    pm.expect(jsonData.id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body title\", function () {\r",
+							"    pm.expect(jsonData.title).to.eql(\"mr\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body firstName\", function () {\r",
+							"    pm.expect(jsonData.firstName).to.eql(\"fff\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body picture\", function () {\r",
+							"    pm.expect(jsonData.picture).to.eql(\"https://cdn.fakercloud.com/avatars/robinclediere_128.jpg\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body gender\", function () {\r",
+							"    pm.expect(jsonData.gender).to.eql(\"other\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body email is string\", function () {\r",
+							"    pm.expect('jsonData.email').to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body dateOfBirth\", function () {\r",
+							"    pm.expect(jsonData.dateOfBirth).to.eql(\"1900-01-01T00:00:00.000Z\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body phone\", function () {\r",
+							"    pm.expect(jsonData.phone).to.eql(\"364-678-5233\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body street\", function () {\r",
+							"    pm.expect(jsonData.location.street).to.eql(\"Carlee Forks\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body city\", function () {\r",
+							"    pm.expect(jsonData.location.city).to.eql(\"Arturoberg\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body state\", function () {\r",
+							"    pm.expect(jsonData.location.state).to.eql(null);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body country\", function () {\r",
+							"    pm.expect(jsonData.location.country).to.eql(\"Hong Kong\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body timezone\", function () {\r",
+							"    pm.expect(jsonData.location.timezone).to.eql(\"+3:00\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body registerDate is string\", function () {\r",
+							"    pm.expect('jsonData.registerDate').to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body updatedDate is string\", function () {\r",
+							"    pm.expect('jsonData.updatedDate').to.be.a('string');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}user/{{userId}}",
+					"host": [
+						"{{host}}user"
+					],
+					"path": [
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});\r",
+							"\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"userId\", jsonData.id);\r",
+							"\r",
+							"pm.test(\"Check body id is string\", function () {\r",
+							"    pm.expect(jsonData.id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body title\", function () {\r",
+							"    pm.expect(jsonData.title).to.eql(\"ms\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body firstName\", function () {\r",
+							"    pm.expect(jsonData.firstName).to.eql(\"Lana\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body LasttName\", function () {\r",
+							"    pm.expect(jsonData.lastName).to.eql(\"Lebedeff\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body picture\", function () {\r",
+							"    pm.expect(jsonData.picture).to.eql(\"https://cdn.fakercloud.com/avatars/robinclediere_128.jpg\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body gender\", function () {\r",
+							"    pm.expect(jsonData.gender).to.eql(\"female\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body email is string\", function () {\r",
+							"    pm.expect('jsonData.email').to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body dateOfBirth\", function () {\r",
+							"    pm.expect(jsonData.dateOfBirth).to.eql(\"1992-04-01T00:00:00.000Z\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body phone\", function () {\r",
+							"    pm.expect(jsonData.phone).to.eql(\"+79816170632\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body street\", function () {\r",
+							"    pm.expect(jsonData.location.street).to.eql(\"Timiryzevo\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body city\", function () {\r",
+							"    pm.expect(jsonData.location.city).to.eql(\"Moscow\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body state\", function () {\r",
+							"    pm.expect(jsonData.location.state).to.eql(null);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body country\", function () {\r",
+							"    pm.expect(jsonData.location.country).to.eql(\"Russia\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body timezone\", function () {\r",
+							"    pm.expect(jsonData.location.timezone).to.eql(\"+3:00\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body registerDate is string\", function () {\r",
+							"    pm.expect('jsonData.registerDate').to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body updatedDate is string\", function () {\r",
+							"    pm.expect('jsonData.updatedDate').to.be.a('string');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\": \"ms\",\r\n\"firstName\": \"Lana\",\r\n\"lastName\": \"Lebedeff\",\r\n\"gender\": \"female\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"dateOfBirth\": \"04/01/1992\",\r\n\"phone\": \"+79816170632\",\r\n\"picture\": \"https://cdn.fakercloud.com/avatars/robinclediere_128.jpg\",\r\n\"location\": {\r\n    \"street\": \"Timiryzevo\",\r\n    \"city\": \"Moscow\",\r\n    \"state\": null,\r\n    \"country\": \"Russia\",\r\n    \"timezone\": \"+3:00\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}user/{{userId}}",
+					"host": [
+						"{{host}}user"
+					],
+					"path": [
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"userId\"));\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}user/{{userId}}",
+					"host": [
+						"{{host}}user"
+					],
+					"path": [
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "app-id",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{app-id}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "userId",
+			"value": ""
+		}
+	]
+}
